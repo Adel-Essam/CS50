@@ -30,7 +30,7 @@ int main(void)
 
 bool prime(int number)
 {
-    bool end;
+    bool end = true;
     if (number == 1 || number == 0)
     {
         end = false;
