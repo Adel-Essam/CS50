@@ -33,6 +33,6 @@ int main(void)
         n++;
     }
     // TODO: Print number of years
-    printf("years: %i", n);
+    printf("years: %i\n", n);
 }
 
