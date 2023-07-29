@@ -19,12 +19,11 @@ int main(void)
     }
     while (end <= start);
 
-
     // TODO: Calculate number of years until we reach threshold
     int n = 0;
-    for(int i = 0;;i++)
+    for (int i = 0;; i++)
     {
-        if(start >= end)
+        if (start >= end)
         {
             break;
         }
@@ -35,4 +34,3 @@ int main(void)
     // TODO: Print number of years
     printf("years: %i\n", n);
 }
-
