@@ -10,14 +10,14 @@ int main(void)
     }
     while (n > 8 || n < 1);
 
-    // int x = n;
+    int x = n - 2;
     for (int i = 0; i < n; i++)
     {
-        // for (int l = x; l >= 0; l--)
-        // {
-        //     printf(" ");
-        // }
-        // x--;
+        for (int l = x; l >= 0; l--)
+        {
+            printf(" ");
+        }
+        x--;
 
         for (int j = 0; j <= i; j++)
         {
