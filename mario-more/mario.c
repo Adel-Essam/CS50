@@ -3,7 +3,7 @@
 
 int main(void)
 {
-        int n;
+    int n;
     do
     {
         n = get_int("hight: ");
@@ -11,25 +11,24 @@ int main(void)
     while (n > 8 || n < 1);
 
     int x = n;
-    for (int i = 0;i < n;i++)
+    for (int i = 0; i < n; i++)
     {
-        for(int l = x;l >= 0;l--)
+        for (int l = x; l >= 0; l--)
         {
             printf(" ");
         }
         x--;
 
-        for (int j = 0;j <= i;j++)
+        for (int j = 0; j <= i; j++)
         {
             printf("#");
         }
-            printf("  ");
-        for (int k = 0;k <= i;k++)
+        printf("  ");
+        for (int k = 0; k <= i; k++)
         {
             printf("#");
         }
 
-            printf("\n");
+        printf("\n");
     }
-
 }
