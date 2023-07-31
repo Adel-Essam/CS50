@@ -7,43 +7,37 @@ int main(void)
     n = get_long_long("Number: ");
     long long x = n;
     int r = 0, sum1 = 0, sum2 = 0, check = 0;
-
-    // Count the number of digits
+    // count the number of digits
     for (int d = 0; x > 0; d++)
     {
         x /= 10;
         r++;
     }
 
-    // Process the credit card number digits from right to left
     for (int i = 0; i < r; i++)
     {
-        // Extract the last digit
-        int digit = n % 10;
+        // get the summtion of the first number and checking if the number after *2 is greater than 10
 
-        // Get the sum of digits at even positions (doubled)
+        int y1 = n % 10;
+        // printf("%i", y1);
         if (i % 2 == 1)
         {
-            int doubledDigit = digit * 2;
-            sum1 += (doubledDigit % 10) + (doubledDigit / 10);
+            sum1 += (y1 * 2) % 10;
+            sum1 += (y1 * 2) / 10;
         }
         else
         {
-            // Get the sum of digits at odd positions
-            sum2 += digit;
+            sum2 += n % 10;
         }
-
-        // Extract the first two digits for identifying the card type
+        // get the first two digits
         if (i == r - 2)
         {
             check = n;
+            printf("%i\n", check);
         }
-
-        // Move to the next digit
         n /= 10;
     }
-
-    // Check the checksum and identify the card type
+    // checking if the checksum's last number is 0 and the cridet card type
     if ((sum1 + sum2) % 10 == 0)
     {
         if ((check >= 51 && check <= 55) && r == 16)
@@ -67,6 +61,5 @@ int main(void)
     {
         printf("INVALID\n");
     }
-
     return 0;
 }
