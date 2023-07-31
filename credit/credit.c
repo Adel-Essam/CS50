@@ -1,64 +1,72 @@
-#include <cs50.h>
 #include <stdio.h>
+#include <cs50.h>
 
 int main(void)
 {
     long long n;
     n = get_long_long("Number: ");
     long long x = n;
-    int r = 0, sum1 = 0, sum2 = 0, check, y1;
-    // count the number of digits
+    int r = 0, sum1 = 0, sum2 = 0, check = 0;
+
+    // Count the number of digits
     for (int d = 0; x > 0; d++)
     {
         x /= 10;
         r++;
     }
 
-    for (int i = 0; i < (r / 2); i++)
+    // Process the credit card number digits from right to left
+    for (int i = 0; i < r; i++)
     {
-        // get the summtion of the first number and checking if the number after *2 is greater than 10
-        y1 = n % 100 / 10;
-        if (i != (r / 2) - 1)
+        // Extract the last digit
+        int digit = n % 10;
+
+        // Get the sum of digits at even positions (doubled)
+        if (i % 2 == 1)
         {
-            if (y1 * 2 > 10)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    sum1 += y1 % 10;
-                }
-            }
-            else
-            {
-                sum1 += y1;
-            }
+            int doubledDigit = digit * 2;
+            sum1 += (doubledDigit % 10) + (doubledDigit / 10);
         }
-        sum2 += n % 10;
-        // get the first number
-        if (i == (r / 2) - 1)
+        else
+        {
+            // Get the sum of digits at odd positions
+            sum2 += digit;
+        }
+
+        // Extract the first two digits for identifying the card type
+        if (i == r - 2)
         {
             check = n;
-            // printf("%i", check);
         }
-        n /= 100;
+
+        // Move to the next digit
+        n /= 10;
     }
-    // checking if the checksum's last number is 0 and the cridet card type
+
+    // Check the checksum and identify the card type
     if ((sum1 + sum2) % 10 == 0)
     {
-        if (check >= 51 && check <= 55)
-        {
-            printf("AMEX\n");
-        }
-        if (check == 37 || check == 34)
+        if ((check >= 51 && check <= 55) && r == 16)
         {
             printf("MASTERCARD\n");
         }
-        if (check == 40)
+        else if ((check == 34 || check == 37) && r == 15)
+        {
+            printf("AMEX\n");
+        }
+        else if ((check / 10 == 4) && (r == 13 || r == 16))
         {
             printf("VISA\n");
+        }
+        else
+        {
+            printf("INVALID\n");
         }
     }
     else
     {
         printf("INVALID\n");
     }
+
+    return 0;
 }
