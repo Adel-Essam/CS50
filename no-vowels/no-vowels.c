@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void replace(int n, string s []);
+void replace(string s []);
 
 int main(int argc, string argv[])
 {
