@@ -17,10 +17,9 @@ int main(int argc, string argv[])
         printf("error there must be one word");
         return 1;
     }
-   replace(argv[1]);
+    replace(argv[1]);
 
-    printf("%s\n",argv[1]);
-
+    printf("%s\n", argv[1]);
 }
 
 void replace(string s)
@@ -29,22 +28,21 @@ void replace(string s)
     {
         switch ((int) s[i])
         {
-        case 97:
-            s[i] = '6';
-            break;
-        case 101:
-            s[i] = '3';
-            break;
-        case 105:
-            s[i] = '1';
-            break;
-        case 111:
-            s[i] = '0';
-            break;
+            case 97:
+                s[i] = '6';
+                break;
+            case 101:
+                s[i] = '3';
+                break;
+            case 105:
+                s[i] = '1';
+                break;
+            case 111:
+                s[i] = '0';
+                break;
 
-        default:
-            continue;
+            default:
+                continue;
         }
     }
-
 }
