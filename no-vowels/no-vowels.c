@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void replace(string s []);
+void replace(string s[]);
 
 int main(int argc, string argv[])
 {
@@ -17,7 +17,7 @@ int main(int argc, string argv[])
         printf("error there must be one word");
         return 1;
     }
-    replace(argv[1]);
+    argv[1] = replace(argv[1]);
 
     printf("%s/n"argv[i]);
 
