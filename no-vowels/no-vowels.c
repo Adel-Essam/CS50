@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void replace(string s[]);
+void replace(string s);
 
 int main(int argc, string argv[])
 {
@@ -23,7 +23,7 @@ int main(int argc, string argv[])
 
 }
 
-void replace(string s[])
+void replace(string s)
 {
     for (int i = 0; i != '/0'; i++)
     {
