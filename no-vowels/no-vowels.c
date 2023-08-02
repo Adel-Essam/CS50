@@ -11,7 +11,7 @@ void replace(string s);
 
 int main(int argc, string argv[])
 {
-    printf("usage: ./no-vowels word");
+    printf("usage: ./no-vowels word\n");
     if (argc != 2)
     {
         printf("error there must be one word");
