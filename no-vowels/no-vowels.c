@@ -17,15 +17,15 @@ int main(int argc, string argv[])
         printf("error there must be one word");
         return 1;
     }
-   // argv[1] = replace(argv[1]);
+   replace(argv[1]);
 
-    printf("%s/n",replace(argv[1]));
+    printf("%s\n",argv[1]);
 
 }
 
 void replace(string s)
 {
-    for (int i = 0; i != '/0'; i++)
+    for (int i = 0; i != '\0'; i++)
     {
         switch ((int) s[i])
         {
