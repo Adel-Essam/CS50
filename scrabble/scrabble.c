@@ -45,9 +45,7 @@ int compute_score(string word)
             {
                 sum += POINTS[j];
             }
-
         }
-
     }
     return sum;
 }
