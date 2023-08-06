@@ -17,11 +17,36 @@ int main(void)
     // Score both words
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
-
+    if (score1 > score2)
+    {
+        printf("Player 1 wins!\n");
+    }
+    else if (score1 < score2)
+    {
+        printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
+    }
     // TODO: Print the winner
 }
 
 int compute_score(string word)
 {
-    // TODO: Compute and return score for string
+char arr2[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    int n = strlen(word), sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < 26; j++)
+        {
+            if (tolower(word[i]) == arr2[j])
+            {
+                sum += arr[j];
+            }
+
+        }
+
+    }
+    return sum;
 }
