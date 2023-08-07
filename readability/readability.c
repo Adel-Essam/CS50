@@ -9,7 +9,7 @@ int count_letters(string s);
 
 int main(void)
 {
-    string s = get_string(0, "text: ");
+    string s = get_string("text: ");
     float l = count_letters(s), w = count_words(s), se = count_sentences(s);
     float l2 = (l / w) * 100;
     float se2 = (se / w) * 100;
