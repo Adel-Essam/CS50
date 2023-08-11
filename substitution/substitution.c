@@ -33,20 +33,21 @@ int main(int argc, string argv[])
                 // check if the letter is upper case or lower case to print it
                 if (isupper(s2[i]))
                 {
-                    toupper(argv[1][j]));
+                   newstr[i] = toupper(argv[1][j]);
                 }
                 else
                 {
-                    printf("%c", tolower(argv[1][j]));
+                   newstr[i] =  tolower(argv[1][j]);
                 }
                 break;
             }
             // check if there is any punctuation marks or spaces
             else if (isalpha(s2[i]) == 0)
             {
-                printf("%c", s2[i]);
+                newstr[i] = s2[i];
                 break;
             }
         }
     }
+    printf("ciphertext: %s", newstr);
 }
