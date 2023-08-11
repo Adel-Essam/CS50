@@ -5,7 +5,6 @@
 
 int main(int argc, string argv[])
 {
-    string s2 = get_string("plaintext: ");
     char arr[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
                   'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     int se = strlen(argv[1]);
@@ -23,6 +22,8 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 0;
     }
+    string s2 = get_string("plaintext: ");
+
     printf("ciphertext: ");
     for (int i = 0; s2[i] != '\0'; i++)
     {
