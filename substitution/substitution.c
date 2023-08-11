@@ -39,21 +39,21 @@ int main(int argc, string argv[])
     printf("ciphertext: ");
     for (int i = 0; s2[i] != '\0'; i++)
     {
-        if (isalpha(s2[i]))
+        char c = s2[i];
+        if (isalpha(c))
         {
-            int index = tolower(s2[i]) - 'a';
-            if (isupper(s2[i]))
+            if (isupper(c))
             {
-                printf("%c", toupper(argv[1][index]));
+                printf("%c", toupper(argv[1][c - 'A']));
             }
             else
             {
-                printf("%c", argv[1][index]);
+                printf("%c", tolower(argv[1][c - 'a']));
             }
         }
         else
         {
-            printf("%c", s2[i]);
+            printf("%c", c);
         }
     }
     printf("\n");
