@@ -21,6 +21,7 @@ int main(int argc, string argv[])
     if (se < 26)
     {
         printf("Key must contain 26 characters.\n");
+        return 0;
     }
     printf("ciphertext: ");
     for (int i = 0; s2[i] != '\0'; i++)
