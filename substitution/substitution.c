@@ -5,8 +5,7 @@
 
 int main(int argc, string argv[])
 {
-    string s2 = get_string(0, "plaintext: ");
-    string newstr;
+    string s2 = get_string("plaintext: ");
     char arr[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
                   'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     int se = strlen(argv[1]);
@@ -23,7 +22,7 @@ int main(int argc, string argv[])
     {
         printf("Key must contain 26 characters.\n");
     }
-
+    printf("ciphertext: ");
     for (int i = 0; s2[i] != '\0'; i++)
     {
         for (int j = 0; j < 26; j++)
@@ -34,21 +33,21 @@ int main(int argc, string argv[])
                 // check if the letter is upper case or lower case to print it
                 if (isupper(s2[i]))
                 {
-                   newstr[i] = toupper(argv[1][j]);
+                    printf("%c", toupper(argv[1][j]));
                 }
                 else
                 {
-                   newstr[i] =  tolower(argv[1][j]);
+                    printf("%c", tolower(argv[1][j]));
                 }
                 break;
             }
             // check if there is any punctuation marks or spaces
             else if (isalpha(s2[i]) == 0)
             {
-                newstr[i] = s2[i];
+                printf("%c", s2[i]);
                 break;
             }
         }
     }
-    printf("ciphertext: %s", newstr);
+        printf("\n");
 }
