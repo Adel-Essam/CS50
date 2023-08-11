@@ -5,51 +5,56 @@
 
 int main(int argc, string argv[])
 {
-    char arr[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-                  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    int se = strlen(argv[1]);
-
-    for (int co = 0; argv[1][co] != '\0'; co++)
+    if (argc != 2)
     {
-        if (!(isalpha(argv[1][co])) || argc != 2)
-        {
-            printf("Usage: ./substitution key\n");
-            return 1;
-        }
+        printf("Usage: ./substitution key\n");
+        return 1;
     }
-    if (se != 26)
+
+    char arr[] = "abcdefghijklmnopqrstuvwxyz";
+
+    int keyLength = strlen(argv[1]);
+
+    if (keyLength != 26)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
+
+    // Check for invalid characters and duplicate characters
+    int seen[26] = {0};
+    for (int i = 0; i < keyLength; i++)
+    {
+        char c = argv[1][i];
+        if (!isalpha(c) || seen[tolower(c) - 'a'] == 1)
+        {
+            printf("Invalid key.\n");
+            return 1;
+        }
+        seen[tolower(c) - 'a'] = 1;
+    }
+
     string s2 = get_string("plaintext: ");
 
     printf("ciphertext: ");
     for (int i = 0; s2[i] != '\0'; i++)
     {
-        for (int j = 0; j < 26; j++)
+        if (isalpha(s2[i]))
         {
-            // chech if the character in the word is in the array of chars
-            if (tolower(s2[i]) == arr[j])
+            int index = tolower(s2[i]) - 'a';
+            if (isupper(s2[i]))
             {
-                // check if the letter is upper case or lower case to print it
-                if (isupper(s2[i]))
-                {
-                    printf("%c", toupper(argv[1][j]));
-                }
-                else
-                {
-                    printf("%c", tolower(argv[1][j]));
-                }
-                break;
+                printf("%c", toupper(argv[1][index]));
             }
-            // check if there is any punctuation marks or spaces
-            else if (isalpha(s2[i]) == 0)
+            else
             {
-                printf("%c", s2[i]);
-                break;
+                printf("%c", argv[1][index]);
             }
         }
+        else
+        {
+            printf("%c", s2[i]);
+        }
     }
-        printf("\n");
+    printf("\n");
 }
