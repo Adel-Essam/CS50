@@ -11,7 +11,7 @@ int main(int argc, string argv[])
 
     for (int co = 0; argv[1][co] != '\0'; co++)
     {
-        if (!(isalpha(argv[1][co])) || se == 0)
+        if (!(isalpha(argv[1][co])) || argc != 2)
         {
             printf("Usage: ./substitution key\n");
             return 1;
