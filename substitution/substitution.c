@@ -11,7 +11,7 @@ int main(int argc, string argv[])
                     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     int se = strlen(s);
 
-    for (int co = 0; s[1][co] !='\0'; co++)
+    for (int co = 0; argv[1][co] !='\0'; co++)
     {
         if (!(isalpha(s[1][co])) || se == 0)
         {
