@@ -33,7 +33,7 @@ int main(int argc, string argv[])
                 // check if the letter is upper case or lower case to print it
                 if (isupper(s2[i]))
                 {
-                    printf("%c", toupper(argv[1][j]));
+                    toupper(argv[1][j]));
                 }
                 else
                 {
