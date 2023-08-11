@@ -5,53 +5,51 @@
 
 int main(int argc, string argv[])
 {
-    if (argc != 2)
-    {
-        printf("Usage: ./substitution key\n");
-        return 1;
-    }
-
     char arr[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
                   'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    int se = strlen(argv[1]);
 
-    int keyLength = strlen(argv[1]);
-
-    if (keyLength != 26)
+    for (int co = 0; argv[1][co] != '\0'; co++)
+    {
+        if (!(isalpha(argv[1][co])) || argc != 2)
+        {
+            printf("Usage: ./substitution key\n");
+            return 1;
+        }
+    }
+    if (se != 26)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-
-    // Create an array to store the substitution mapping
-    char substitution[26];
-
-    // Populate the substitution mapping
-    for (int i = 0; i < 26; i++)
-    {
-        substitution[i] = argv[1][i];
-    }
-
     string s2 = get_string("plaintext: ");
 
     printf("ciphertext: ");
     for (int i = 0; s2[i] != '\0'; i++)
     {
-        if (isalpha(s2[i]))
+        for (int j = 0; j < 26; j++)
         {
-            int index = tolower(s2[i]) - 'a';
-            if (isupper(s2[i]))
+            // chech if the character in the word is in the array of chars
+            if (tolower(s2[i]) == arr[j])
             {
-                printf("%c", toupper(substitution[index]));
+                // check if the letter is upper case or lower case to print it
+                if (isupper(s2[i]))
+                {
+                    printf("%c", toupper(argv[1][j]));
+                }
+                else
+                {
+                    printf("%c", tolower(argv[1][j]));
+                }
+                break;
             }
-            else
+            // check if there is any punctuation marks or spaces
+            else if (isalpha(s2[i]) == 0)
             {
-                printf("%c", substitution[index]);
+                printf("%c", s2[i]);
+                break;
             }
-        }
-        else
-        {
-            printf("%c", s2[i]);
         }
     }
-    printf("\n");
+        printf("\n");
 }
