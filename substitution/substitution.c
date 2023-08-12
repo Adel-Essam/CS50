@@ -12,48 +12,51 @@ int main(int argc, string argv[])
     }
 
     char arr[] = "abcdefghijklmnopqrstuvwxyz";
-
-    int keyLength = strlen(argv[1]);
-
-    if (keyLength != 26)
+    int se = strlen(argv[1]);
+    if (se != 26)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
 
-    // Check for invalid characters and duplicate characters
-    int seen[26] = {0};
-    for (int i = 0; i < keyLength; i++)
+    bool seen[26] = {0};
+    for (int co = 0; co < se; co++)
     {
-        char c = argv[1][i];
+        char c = argv[1][co];
         if (!isalpha(c) || seen[tolower(c) - 'a'] == 1)
         {
-            printf("Invalid key.\n");
+            printf("Usage: ./substitution key\n");
             return 1;
         }
         seen[tolower(c) - 'a'] = 1;
     }
-
     string s2 = get_string("plaintext: ");
 
     printf("ciphertext: ");
     for (int i = 0; s2[i] != '\0'; i++)
     {
-        char c = s2[i];
-        if (isalpha(c))
+        for (int j = 0; j < 26; j++)
         {
-            if (isupper(c))
+            // chech if the character in the word is in the array of chars and get the index
+            if (tolower(s2[i]) == arr[j])
             {
-                printf("%c", toupper(argv[1][c - 'A']));
+                // check if the letter is upper case or lower case to print it
+                if (isupper(s2[i]))
+                {
+                    printf("%c", toupper(argv[1][j]));
+                }
+                else
+                {
+                    printf("%c", tolower(argv[1][j]));
+                }
+                break;
             }
-            else
+            // check if there is any punctuation marks or spaces
+            else if (!isalpha(s2[i]))
             {
-                printf("%c", tolower(argv[1][c - 'a']));
+                printf("%c", s2[i]);
+                break;
             }
-        }
-        else
-        {
-            printf("%c", c);
         }
     }
     printf("\n");
