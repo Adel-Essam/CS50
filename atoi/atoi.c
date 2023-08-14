@@ -25,5 +25,11 @@ int main(void)
 
 int convert(string input)
 {
-    // TODO
+    int sl = strlen(input), out = 0;
+    for (int i = 0; input[i] != '\0'; i++, sl--)
+    {
+        int n = input[i] - '0';
+        out += n * ((int) pow(10, sl - 1));
+    }
+    return out;
 }
