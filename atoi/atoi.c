@@ -25,17 +25,18 @@ int main(void)
 
 int convert(string input)
 {
-    // int sl = strlen(input), out = 0;
-    // for (int i = 0; input[i] != '\0'; i++, sl--)
-    // {
-    //     int n = input[i] - '0';
-    //     out += n * ((int) pow(10, sl - 1));
-    // }
-    // return out
-    if (input[0] == '\0')
-        return 0;
+    int sl = strlen(input), out = 0;
+    for (int i = 0; input[i] != '\0'; i++, sl--)
+    {
+        int n = input[i] - '0';
+        // out += n * ((int) pow(10, sl - 1));
+        out = out * 10 + n;
+    }
+    return out;
+    // if (input[0] == '\0')
+    //     return 0;
 
-    printf("Processing: %c\n", input[0]);
+    // printf("Processing: %c\n", input[0]);
 
-    return convert(input + 1) * 10 + (input[0] - '0');;
+    // return convert(input + 1) * 10 + (input[0] - '0');
 }
