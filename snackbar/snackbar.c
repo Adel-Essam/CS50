@@ -74,11 +74,52 @@ int main(void)
 // Add at least the first four items to the menu array
 void add_items(void)
 {
+    menu[0].item = "Burger";
+    menu[1].item = "Vegan Burger";
+    menu[2].item = "Hot Dog";
+    menu[3].item = "Cheese Dog";
+    menu[4].item = "Fries";
+    menu[5].item = "Cheese Fries";
+    menu[6].item = "Cold Pressed Juice";
+    menu[7].item = "Cold Brew";
+    menu[8].item = "Water";
+    menu[9].item = "Soda";
+
+    menu[0].price = 9.50;
+    menu[1].price = 11.00;
+    menu[2].price = 5.00;
+    menu[3].price = 7.00;
+    menu[4].price = 5.00;
+    menu[5].price = 6.00;
+    menu[6].price = 7.00;
+    menu[7].price = 3.00;
+    menu[8].price = 2.00;
+    menu[9].price = 2.00;
     return;
 }
 
 // Search through the menu array to find an item's cost
 float get_cost(string item)
 {
+    char s1[strlen(item)];
+    for (int j = 0; item[j] != '\0'; j++)
+    {
+        s1[j] = towlower(item[j]);
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        int n =strlen(menu[i].item);
+        char  s2[n + 1];
+        for (int j = 0; j < n + 1; j++)
+        {
+            s2[j] = towlower(menu[i].item[j]);
+        }
+
+        if (strcmp(s1, s2) == 0)
+        {
+            return menu[i].price;
+        }
+    }
     return 0.0;
 }
