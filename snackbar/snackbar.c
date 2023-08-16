@@ -104,7 +104,7 @@ float get_cost(string item)
     char s1[strlen(item)];
     for (int j = 0; item[j] != '\0'; j++)
     {
-        s1[j] = towlower(item[j]);
+        s1[j] = tolower(item[j]);
     }
 
     for (int i = 0; i < 10; i++)
@@ -113,7 +113,7 @@ float get_cost(string item)
         char  s2[n + 1];
         for (int j = 0; j < n + 1; j++)
         {
-            s2[j] = towlower(menu[i].item[j]);
+            s2[j] = tolower(menu[i].item[j]);
         }
 
         if (strcmp(s1, s2) == 0)
