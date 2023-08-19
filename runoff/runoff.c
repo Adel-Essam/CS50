@@ -173,7 +173,7 @@ bool print_winner(void)
     {
         if (candidates[i].votes > (candidate_count / 2.0))
         {
-            printf("%s", candidates[i].name);
+            printf("%s\n", candidates[i].name);
             return true;
         }
         if (candidates[i].votes > max)
@@ -184,7 +184,7 @@ bool print_winner(void)
     {
         if (candidates[j].votes == max)
         {
-            printf("%s", candidates[j].name);
+            printf("%s\n", candidates[j].name);
             return true;
         }
     }
