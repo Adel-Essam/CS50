@@ -197,8 +197,8 @@ bool is_tie(int min)
 {
     // TODO
     int n;
-
-    for (int i = 0; i < candidate_count; i++)
+    int i = 0
+    for (; i < candidate_count; i++)
     {
         int c = candidates[i].votes;
         int q = candidates[i].eliminated;
