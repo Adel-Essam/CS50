@@ -177,6 +177,10 @@ bool print_winner(void)
             printf("%s", candidates[i].name);
             return true;
         }
+        if (candidates[i].votes > max)
+        {
+            max = candidates[i].votes;
+        }
     }
     return false;
 }
