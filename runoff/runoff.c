@@ -100,6 +100,9 @@ int main(int argc, string argv[])
         int min = find_min();
         bool tie = is_tie(min);
 
+        // Eliminate anyone with minimum number of votes
+        eliminate(min);
+
         // If tie, everyone wins
         if (tie)
         {
@@ -112,9 +115,6 @@ int main(int argc, string argv[])
             }
             break;
         }
-
-        // Eliminate anyone with minimum number of votes
-        eliminate(min);
 
         // Reset vote counts back to zero
         for (int i = 0; i < candidate_count; i++)
