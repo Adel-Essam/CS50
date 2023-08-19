@@ -169,7 +169,6 @@ bool print_winner(void)
 {
     // TODO
     int max = 0;
-    bool b = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > (candidate_count / 2.0))
@@ -178,8 +177,15 @@ bool print_winner(void)
             return true;
         }
         if (candidates[i].votes > max)
-        {
             max = candidates[i].votes;
+    }
+
+    for (int j = 0; j < candidate_count; j++)
+    {
+        if (candidates[j].votes == max)
+        {
+            printf("%s", candidates[j].name);
+            return true;
         }
     }
     return false;
