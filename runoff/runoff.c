@@ -168,6 +168,8 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
+    int max = 0;
+    bool b = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > (candidate_count / 2.0))
