@@ -169,27 +169,37 @@ bool print_winner(void)
 {
     // TODO
     int max = 0;
+
+    // Find the maximum number of votes obtained by any candidate
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes > (candidate_count / 2.0))
-        {
-            printf("%s\n", candidates[i].name);
-            return true;
-        }
         if (candidates[i].votes > max)
             max = candidates[i].votes;
     }
 
+    // Check if there is a candidate with more than half of the total votes
     for (int j = 0; j < candidate_count; j++)
     {
-        if (candidates[j].votes == max)
+        if (candidates[j].votes > (candidate_count / 2.0))
         {
-            printf("%s\n", candidates[j].name);
-            return true;
+            printf("%s\n", candidates[j].name); // Print the winner's name
+            return true; // Return true indicating a winner was found
         }
     }
-    return false;
+
+    // Print the names of candidates with the maximum votes
+    for (int k = 0; k < candidate_count; k++)
+    {
+        if (candidates[k].votes == max)
+        {
+            printf("%s\n", candidates[k].name);
+            // No need to return true here because the loop will continue to check other candidates
+        }
+    }
+
+    return false; // No winner found
 }
+
 
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
