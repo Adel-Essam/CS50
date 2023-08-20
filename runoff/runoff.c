@@ -212,9 +212,9 @@ bool is_tie(int min)
     {
         int c = candidates[j].votes;
         int q = candidates[j].eliminated;
-        if(j != i)
+        if(j != i && q == 0)
         {
-            if (q == 1 && c == min && c == n)
+            if (c != min && c == n)
                 return true;
 
         }
