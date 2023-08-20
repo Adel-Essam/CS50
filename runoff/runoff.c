@@ -155,41 +155,27 @@ void tabulate(void)
             }
         }
     }
-    
+
     return;
 }
 
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    // Find the maximum number of votes obtained by any candidate
-    int max_votes = 0;
+    // Find the majority threshold (more than half the total votes)
+    int majority_threshold = voter_count / 2;
+
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes > max_votes)
-            max_votes = candidates[i].votes;
-    }
-
-    // Check if a candidate has more than half of the total votes
-    for (int j = 0; j < candidate_count; j++)
-    {
-        if (candidates[j].votes > (candidate_count / 2))
+        if (candidates[i].votes > majority_threshold)
         {
-            printf("%s\n", candidates[j].name);
-            return true; // Return true indicating a winner was found
+            printf("%s\n", candidates[i].name);
+            return true; // A winner was found
         }
-    }
-
-    // If no one has more than half the votes, print candidates with the maximum votes
-    for (int k = 0; k < candidate_count; k++)
-    {
-        if (candidates[k].votes == max_votes)
-            printf("%s\n", candidates[k].name);
     }
 
     return false; // No winner found
 }
-
 
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
