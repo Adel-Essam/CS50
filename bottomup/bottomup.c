@@ -62,9 +62,12 @@ int main(int argc, char *argv[])
     // Determine padding for scanlines
     int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
 
-    // Iterate over infile's scanlines
+    // Iterate over infile's scanlines in reverse order
     for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
     {
+        // Seek to the beginning of the current scanline
+        fseek(inptr, sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER) + ((biHeight - 1 - i) * (bi.biWidth * sizeof(RGBTRIPLE) + padding)), SEEK_SET);
+
         // Iterate over pixels in scanline
         for (int j = 0; j < bi.biWidth; j++)
         {
@@ -86,6 +89,7 @@ int main(int argc, char *argv[])
         {
             fputc(0x00, outptr);
         }
+    }
     }
 
     // Close infile
