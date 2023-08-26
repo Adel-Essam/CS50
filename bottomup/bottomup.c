@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
             fputc(0x00, outptr);
         }
     }
-    }
+    
 
     // Close infile
     fclose(inptr);
