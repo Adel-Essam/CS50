@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int main(int argc, char *argv[])
@@ -34,14 +35,14 @@ int main(int argc, char *argv[])
         }
         // Save plate number in array
         strcpy(plates[idx], buffer);
-        printf("%s\n", plates[idx]);
         idx++;
     }
-    printf("---------------------------------------\n");
 
-    // for (int i = 0; i < 8; i++)
-    // {
-    //     printf("%s\n", plates[i]);
-    // }
-    // fclose(infile);
+    for (int i = 0; i < 8; i++)
+    {
+        printf("%s\n", plates[i]);
+        free(plates[i]);
+    }
+
+    fclose(infile);
 }
