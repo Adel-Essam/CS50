@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
     int idx = 0;
 
-    while (fread(buffer, 1, 7, infile) )
+    while (fread(buffer, 1, 7, infile) == 7)
     {
         // Replace '\n' with '\0'
         buffer[6] = '\0';
@@ -32,9 +32,9 @@ int main(int argc, char *argv[])
     }
     printf("---------------------------------------\n");
 
-    for (int i = 0; i < 8; i++)
-    {
-        printf("%s\n", plates[i]);
-    }
-    fclose(infile);
+    // for (int i = 0; i < 8; i++)
+    // {
+    //     printf("%s\n", plates[i]);
+    // }
+    // fclose(infile);
 }
