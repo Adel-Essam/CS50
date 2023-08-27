@@ -25,6 +25,13 @@ int main(int argc, char *argv[])
         // Replace '\n' with '\0'
         buffer[6] = '\0';
 
+        plates[idx] = malloc(7);
+        if (plates[idx] == NULL)
+        {
+            printf("memory allocation failed\n");
+            fclose(infile);
+            return 1;
+        }
         // Save plate number in array
         strcpy(plates[idx], buffer);
         printf("%s\n", plates[idx]);
