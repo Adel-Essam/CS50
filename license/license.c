@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, 7, infile) == 7)
     {
         // Replace '\n' with '\0'
-        buffer[7] = '\0';
+        buffer[6] = '\0';
 
         // Save plate number in array
         plates[idx] = buffer;
