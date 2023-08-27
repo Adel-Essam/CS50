@@ -26,12 +26,13 @@ int main(int argc, char *argv[])
 
         // Save plate number in array
         plates[idx] = buffer;
+        printf("%s\n", buffer);
         idx++;
     }
 
-    for (int i = 0; i < 8; i++)
-    {
-        printf("%s\n", plates[i]);
-    }
+    // for (int i = 0; i < 8; i++)
+    // {
+    //     printf("%s\n", plates[i]);
+    // }
     fclose(infile);
 }
