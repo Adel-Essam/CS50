@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
     int idx = 0;
 
-    while (fread(buffer, 1, 7, infile) != EOF)
+    while (fread(buffer, 1, 7, infile) )
     {
         // Replace '\n' with '\0'
         buffer[6] = '\0';
