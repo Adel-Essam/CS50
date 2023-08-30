@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
     if (output == NULL)
     {
         printf("Could not open file.\n");
+        fclose(input);
         return 1;
     }
 
