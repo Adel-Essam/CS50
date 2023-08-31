@@ -35,8 +35,17 @@ int main(int argc, char *argv[])
     float factor = atof(argv[3]);
 
     // TODO: Copy header from input file to output file
+    int8_t header [HEADER_SIZE];
+    fread(header, 1, sizeof(int8_t) * 44, input);
+    fwrite(header, 1, sizeof(int8_t) * 44, output);
 
     // TODO: Read samples from input file and write updated data to output file
+    int16_t buffer;
+    while (fread(buffer, 2, sizeof(int16_t), input))
+    {
+        buffer *= factor;
+        fwrite(buffer, 2, sizeof(int16_t), output);
+    }
 
     // Close files
     fclose(input);
