@@ -21,7 +21,7 @@ int main()
     while (i > 0)
     {
         i = get_int("Enter a nigative number to stop : ");
-        string s = get_string(NULL, "Enter a phrase : ");
+        string s = get_string("Enter a phrase : ");
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
