@@ -1,1 +1,1 @@
-import 
+from pyfiglet import Figlet
