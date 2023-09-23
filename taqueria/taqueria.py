@@ -15,11 +15,12 @@ def main():
 
     sum = 0
     while True:
-        s = input("Enter an item and to exit press '-d': ")
-        if s == "control-d":
+        try:
+            s = input("Enter an item and to exit press '-d': ").capitalize()
+            sum += items[s]
+            print(f"total: {sum:.2f}")
+        except EOFError:
+            print()
             exit(0)
-        sum += items[s]
-        print(f"total: {sum:.2f}")
-
 
 main()
