@@ -1,3 +1,5 @@
+from sys import exit
+
 def main():
     items = {
         "Baja Taco": 4.00,
@@ -15,7 +17,7 @@ def main():
     while True:
         s = input("Enter an item and to exit press '-d': ")
         if s == "-d":
-            break
+            exit(0)
         sum += items[s]
         print(f"total: {sum:.2f}")
 
