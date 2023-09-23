@@ -1,10 +1,11 @@
 from pyfiglet import Figlet
-from sys import argv
+
+import sys
 
 figlet = Figlet()
 
 figlet.getFonts()
-f = argv[2]
+f = sys.argv[2]
 figlet.setFont(font=f)
 
 s = input("Input: ")
