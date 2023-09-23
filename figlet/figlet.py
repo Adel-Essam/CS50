@@ -1,6 +1,8 @@
 from pyfiglet import Figlet
 
-import sys
+from sys import argv
+
+import random
 
 figlet = Figlet()
 
