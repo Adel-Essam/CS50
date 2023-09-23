@@ -16,7 +16,7 @@ def main():
     sum = 0
     while True:
         s = input("Enter an item and to exit press '-d': ")
-        if s == "-d":
+        if s == "control-d":
             exit(0)
         sum += items[s]
         print(f"total: {sum:.2f}")
