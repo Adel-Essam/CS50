@@ -18,7 +18,7 @@ def main():
         try:
             s = input("Enter an item: ").title()
             sum += items[s]
-            print(f"total: {sum:.2f}")
+            print(f"total: ${sum:.2f}")
         except :
             # print()
             exit(0)
