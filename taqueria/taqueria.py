@@ -16,7 +16,7 @@ def main():
     sum = 0
     while True:
         try:
-            s = input("Enter an item: ").capitalize()
+            s = input("Enter an item: ").title()
             sum += items[s]
             print(f"total: {sum:.2f}")
         except EOFError:
