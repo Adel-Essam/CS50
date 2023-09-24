@@ -20,9 +20,6 @@ def main():
             if s in items:
                 sum += items[s]
                 print(f"total: ${sum:.2f}")
-            else:
-                print("Not in the list")
-                break
         except :
             # print()
             exit(0)
