@@ -22,6 +22,7 @@ def main():
                 print(f"total: ${sum:.2f}")
             else:
                 print("Not in the list")
+                break
         except :
             # print()
             exit(0)
