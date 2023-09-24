@@ -19,8 +19,8 @@ def main():
             s = input("Enter an item: ").title()
             sum += items[s]
             print(f"total: {sum:.2f}")
-        except EOFError:
-            print()
+        except :
+            # print()
             exit(0)
 
 main()
