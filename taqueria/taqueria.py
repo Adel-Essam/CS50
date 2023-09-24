@@ -17,8 +17,11 @@ def main():
     while True:
         try:
             s = input("Enter an item: ").title()
-            sum += items[s]
-            print(f"total: ${sum:.2f}")
+            if s in items:
+                sum += items[s]
+                print(f"total: ${sum:.2f}")
+            else:
+                print("Not in the list")
         except :
             # print()
             exit(0)
