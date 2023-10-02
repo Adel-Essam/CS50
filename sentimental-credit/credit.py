@@ -26,6 +26,8 @@ def main():
         elif int(check / 10) == 4:
             if le == 13 or le == 16:
                 print("VISA")
+            else:
+                print("INVALID")
         else:
             print("INVALID")
     else:
