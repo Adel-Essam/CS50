@@ -12,8 +12,8 @@ def main():
                     l -= 1
                 if i == n:
                     break
-        except :
-                ...
+        except:
+            ...
 
 
 main()
