@@ -1,6 +1,9 @@
 # TODO
+from cs50 import get_int as geti
+
+
 def main():
-    n = int(input("Height: "))
+    n = geti("Height: "))
     if n < 1:
         print("Enter a positive value")
         return 1
