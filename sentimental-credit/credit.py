@@ -15,6 +15,7 @@ def main():
             sum2 += n % 10
         if i == le - 2:
             check = n
+            check = int(check)
         n /= 10
         n = int(n)
     if (sum1 + sum2) % 10 == 0:
@@ -22,8 +23,9 @@ def main():
             print("MASTERCARD")
         elif (check == 34 or check == 37) and le == 15:
             print("AMEX")
-        elif (check / 10 == 4) and le == 13 or le == 16:
-            print("VISA")
+        elif int(check / 10) == 4:
+            if le == 13 or le == 16:
+                print("VISA")
         else:
             print("INVALID")
     else:
