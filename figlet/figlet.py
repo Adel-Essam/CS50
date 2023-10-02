@@ -35,3 +35,4 @@ elif len(argv) == 1:
     output = figlet.renderText(text)
     print("Output:")
     print(output)
+    
