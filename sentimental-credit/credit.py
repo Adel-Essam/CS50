@@ -4,7 +4,7 @@ def main():
     le = len(n)
     n = int(n)
     for i in range(n):
-
+        ...
 
 
 main()
