@@ -13,7 +13,7 @@ def main():
     l = (l / w) * 100
     se = (se / w) * 100
     if ((l * 0.0588) - (se * 0.296) - 15.8) < 1:
-        print("Before grade 1")
+        print("Before Grade 1")
     elif ((l * 0.0588) - (se * 0.296) - 15.8) > 16:
         print("Grade 16+")
     else:
