@@ -11,9 +11,9 @@ int main(void)
 {
     string s = get_string("text: ");
     float l = count_letters(s), w = count_words(s), se = count_sentences(s);
-    printf("letters: %f", l)
-    printf("words: %f", w)
-    printf("sentenses: %f", se)
+    printf("letters: %f\n", l);
+    printf("words: %f\n", w);
+    printf("sentenses: %f\n", se);
     float l2 = (l / w) * 100;
     float se2 = (se / w) * 100;
 
