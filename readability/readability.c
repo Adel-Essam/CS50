@@ -11,9 +11,6 @@ int main(void)
 {
     string s = get_string("text: ");
     float l = count_letters(s), w = count_words(s), se = count_sentences(s);
-    // printf("letters: %f\n", l);
-    // printf("words: %f\n", w);
-    // printf("sentenses: %f\n", se);
     float l2 = (l / w) * 100;
     float se2 = (se / w) * 100;
 
@@ -27,7 +24,7 @@ int main(void)
     }
     else
     {
-        printf("Grade %.3f\n", ((l2 * 0.0588) - (se2 * 0.296) - 15.8));
+        printf("Grade %.0f\n", ((l2 * 0.0588) - (se2 * 0.296) - 15.8));
     }
 }
 int count_sentences(string s)
