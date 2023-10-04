@@ -1,1 +1,5 @@
 # TODO
+def main():
+    ...
+
+main()
