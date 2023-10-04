@@ -11,24 +11,24 @@ int main(void)
 {
     string s = get_string("text: ");
     float l = count_letters(s), w = count_words(s), se = count_sentences(s);
-    printf("letters: %f\n", l);
-    printf("words: %f\n", w);
-    printf("sentenses: %f\n", se);
+    // printf("letters: %f\n", l);
+    // printf("words: %f\n", w);
+    // printf("sentenses: %f\n", se);
     float l2 = (l / w) * 100;
     float se2 = (se / w) * 100;
 
-    // if (((l2 * 0.0588) - (se2 * 0.296) - 15.8) < 1)
-    // {
-    //     printf("Before Grade 1\n");
-    // }
-    // else if (((l2 * 0.0588) - (se2 * 0.296) - 15.8) > 16)
-    // {
-    //     printf("Grade 16+\n");
-    // }
-    // else
-    // {
-    //     printf("Grade %.0f\n", ((l2 * 0.0588) - (se2 * 0.296) - 15.8));
-    // }
+    if (((l2 * 0.0588) - (se2 * 0.296) - 15.8) < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (((l2 * 0.0588) - (se2 * 0.296) - 15.8) > 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %.3f\n", ((l2 * 0.0588) - (se2 * 0.296) - 15.8));
+    }
 }
 int count_sentences(string s)
 {
