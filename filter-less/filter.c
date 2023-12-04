@@ -1,6 +1,3 @@
-/*
-https://cs50.harvard.edu/x/2022/psets/4/filter/less/
-*/
 
 #include <getopt.h>
 #include <stdio.h>
